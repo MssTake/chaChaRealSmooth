@@ -77,14 +77,17 @@ main PROC PUBLIC
 	v2 PROC
 		push edx, OFFSET v2l1
 		call WriteString
+		; did the player clap?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v2l2
 		call WriteString
+		; did the player clao?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v2l3
 		call WriteString
+		; did the player clap?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v2l4
@@ -96,48 +99,60 @@ main PROC PUBLIC
 	v3 PROC
 		push edx, OFFSET v3l1
 		call WriteString
+		; did the player left?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v3l2
 		call WriteString
+		; did the player back?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v3l3
 		call WriteString
+		; did the player oneh?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v3l4
 		call WriteString
+		; did the player righ?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v3l5
 		call WriteString
+		; did the player left?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v3l6
 		call WriteString
+		; did the player cha1? cha2?
+		; figure out how to pause for a bit
 		pop edx
 	v3 ENDP
 
 	v4 PROC
 		push edx, OFFSET v4l1
 		call WriteString
+		; write a disclaimer that I didn't code this one
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v4l2
 		call WriteString
+		; did the player left?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v4l3
 		call WriteString
+		; did the player back?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v4l4
 		call WriteString
+		; did the player oneh?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v4l5
 		call WriteString
+		; did the player right?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v4l6
@@ -145,10 +160,12 @@ main PROC PUBLIC
 		pop edx
 		push edx, OFFSET v4l7
 		call WriteString
+		; did the player left?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v4l8
 		call WriteString
+		; did the player cha1? cha2?
 		; figure out how to pause for a bit
 		pop edx
 		push edx, OFFSET v4l9
@@ -156,56 +173,6 @@ main PROC PUBLIC
 		; figure out how to pause for a bit
 		pop edx
 	v4 ENDP
-
-	v5 PROC
-		push edx, OFFSET v5l1
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l2
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l3
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l4
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l5
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l6
-		call WriteString
-		pop edx
-		push edx, OFFSET v5l7
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l8
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l9
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l10
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l11
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-		push edx, OFFSET v5l12
-		call WriteString
-		; figure out how to pause for a bit
-		pop edx
-	v5 ENDP
 
 main ENDP
 END main

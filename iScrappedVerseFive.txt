@@ -1,0 +1,49 @@
+v5 PROC
+		push edx, OFFSET v5l1
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l2
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l3
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l4
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l5
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l6
+		call WriteString
+		pop edx
+		push edx, OFFSET v5l7
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l8
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l9
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l10
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l11
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+		push edx, OFFSET v5l12
+		call WriteString
+		; figure out how to pause for a bit
+		pop edx
+	v5 ENDP

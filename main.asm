@@ -9,12 +9,8 @@ score BYTE 0,0
 main PROC
 ; get this to play 131 bpm
 
-	score PROC
-	; did the player move on the beat?
-
-		; increase point
-
-	score ENDP
+	evbClaYoHan PROC
+	evbClaYoHan ENDP
 
 main ENDP
 END main
