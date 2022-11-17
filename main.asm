@@ -112,7 +112,6 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
-		ret
 	plsClap ENDP
 
 	;verse 3
