@@ -34,15 +34,6 @@ INCLUDE Irvine32.inc
 	v3l5 BYTE "Left foot, let's stomp",0
 	v3l6 BYTE "Cha cha real smooth",0
 
-	v4l1 BYTE "Turn it out (I forgot to code this one, sorry)",0
-	v4l2 BYTE "To the left",0
-	v4l3 BYTE "Take it back now y'all",0
-	v4l4 BYTE "One hop this time",0
-	v4l5 BYTE "Right foot, let's stomp",0
-	v4l6 BYTE "Left foot, let's stomp",0
-	v4l7 BYTE "Cha cha now y'all",0
-	v4l8 BYTE "Now it's time to get funky",0
-
 .code
 main PROC
 	mov eax,black (white * 16)
@@ -85,25 +76,36 @@ main PROC
 	call WriteString
 	mov eax,916
 	call Delay
-	je didClap
+	je plsClap
 	call Clrscr
 	mov edx,OFFSET v2l2
 	call WriteString
 	mov eax,916
 	call Delay
-	je didClap
+	je plsClap
 	call Clrscr
 	mov edx,OFFSET v2l3
 	call WriteString
 	mov eax,916
 	call Delay
-	je didClap
+	je plsClap
 	call Clrscr
 	mov edx,OFFSET v2l4
 	call WriteString
 	mov eax,916
 	call Delay
 	call Clrscr
+
+	plsClap:
+		call Clrscr
+		mov al,defa
+		call WriteChar
+		call ReadChar
+		mov inputChar,al
+		cmp inputChar,"c"
+		inc	score
+		mov al,clap
+		call WriteString
 
 	;verse 3
 	mov edx,OFFSET v3l1
@@ -143,73 +145,8 @@ main PROC
 	je didCha1
 	je didCha2
 	call Clrscr
-
-	; verse 4
-	mov edx,OFFSET v4l1
-	call WriteString
-	mov eax,916
-	call Delay
-	call Clrscr
-	mov edx,OFFSET v4l2
-	call WriteString
-	mov eax,916
-	call Delay
-	je didLeft
-	call Clrscr
-	mov edx,OFFSET v4l3
-	call WriteString
-	mov eax,916
-	call Delay
-	je didBack
-	call Clrscr
-	mov edx,OFFSET v4l4
-	call WriteString
-	mov eax,916
-	call Delay
-	je didOneh
-	call Clrscr
-	mov edx,OFFSET v4l5
-	call WriteString
-	mov eax,916
-	call Delay
-	je didRigh
-	call Clrscr
-	mov edx,OFFSET v4l6
-	call WriteString
-	mov eax,916
-	call Delay
-	je didLeft
-	call Clrscr
-	mov edx,OFFSET v4l7
-	call WriteString
-	mov eax,916
-	call Delay
-	je didCha1
-	je didCha2
-	call Clrscr
-	mov edx,OFFSET v4l8
-	call WriteString
-	mov eax,916
-	call Delay
 	
-	;score
-	call Clrscr
-	mov edx,OFFSET score
-	call WriteString
-	mov eax,916
-	call Delay
-
 	; controls
-	didClap:
-		call Clrscr
-		mov al,defa
-		call WriteChar
-		call ReadChar
-		mov inputChar,al
-		cmp inputChar,"c"
-		inc	score
-		mov al,clap
-		call WriteString
 	didLeft:
 		call Clrscr
 		mov al,defa
@@ -270,6 +207,14 @@ main PROC
 		inc score
 		mov al,cha2
 		call WriteChar
+
+	;score
+		call Clrscr
+		mov edx,OFFSET score
+		call WriteString
+		mov eax,916
+		call Delay
+
 
 main ENDP
 END main

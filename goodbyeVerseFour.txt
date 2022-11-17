@@ -1,0 +1,57 @@
+
+; verse 4
+mov edx,OFFSET v4l1
+call WriteString
+mov eax,916
+call Delay
+call Clrscr
+mov edx,OFFSET v4l2
+call WriteString
+mov eax,916
+call Delay
+je didLeft
+call Clrscr
+mov edx,OFFSET v4l3
+call WriteString
+mov eax,916
+call Delay
+je didBack
+call Clrscr
+mov edx,OFFSET v4l4
+call WriteString
+mov eax,916
+call Delay
+je didOneh
+call Clrscr
+mov edx,OFFSET v4l5
+call WriteString
+mov eax,916
+call Delay
+je didRigh
+call Clrscr
+mov edx,OFFSET v4l6
+call WriteString
+mov eax,916
+call Delay
+je didLeft
+call Clrscr
+mov edx,OFFSET v4l7
+call WriteString
+mov eax,916
+call Delay
+je didCha1
+je didCha2
+call Clrscr
+mov edx,OFFSET v4l8
+call WriteString
+mov eax,916
+call Delay
+
+v4l1 BYTE "Turn it out (I forgot to code this one, sorry)",0
+v4l2 BYTE "To the left",0
+v4l3 BYTE "Take it back now y'all",0
+v4l4 BYTE "One hop this time",0
+v4l5 BYTE "Right foot, let's stomp",0
+v4l6 BYTE "Left foot, let's stomp",0
+v4l7 BYTE "Cha cha now y'all",0
+v4l8 BYTE "Now it's time to get funky",0
