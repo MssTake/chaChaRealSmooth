@@ -1,5 +1,4 @@
 INCLUDE Irvine32.inc
-
 .data
 	score BYTE 0,0
 	inputChar BYTE ?
@@ -39,8 +38,8 @@ main PROC
 	mov eax,black (white * 16)
 	call SetTextColor
 	call Clrscr
-	mov dl,40
-	mov dh,12
+	; mov dl,40
+	; mov dh,12
 	call GotoXY
 
 	; verse 1
@@ -100,12 +99,16 @@ main PROC
 		call Clrscr
 		mov al,defa
 		call WriteChar
+		call Clrscr
 		call ReadChar
 		mov inputChar,al
 		cmp inputChar,"c"
 		inc	score
 		mov al,clap
 		call WriteString
+		mov eax,916
+		call Delay
+		call Clrscr
 
 	;verse 3
 	mov edx,OFFSET v3l1
@@ -114,30 +117,94 @@ main PROC
 	call Delay
 	je didLeft
 	call Clrscr
+
+	didLeft:
+		call Clrscr
+		mov al,defa
+		call WriteChar
+		call Clrscr
+		call ReadChar
+		mov inputChar,al
+		cmp inputChar,"a"
+		inc score
+		mov al,left
+		call WriteChar
+		mov eax,916
+		call Delay
+		call Clrscr
+	
 	mov edx,OFFSET v3l2
 	call WriteString
 	mov eax,916
 	call Delay
 	je didBack
 	call Clrscr
+
+	didBack:
+		call Clrscr
+		mov al,defa
+		call WriteChar
+		call Clrscr
+		call ReadChar
+		mov inputChar,al
+		cmp inputChar,"s"
+		inc score
+		mov al,back
+		call WriteChar
+		mov eax,916
+		call Delay
+		call Clrscr
+
 	mov edx,OFFSET v3l3
 	call WriteString
 	mov eax,916
 	call Delay
 	je didOneh
 	call Clrscr
+
+	didOneh:
+		mov al,defa
+		call WriteChar
+		call Clrscr
+		call ReadChar
+		mov inputChar,al
+		cmp inputChar,"w"
+		inc score
+		mov al,oneh
+		call WriteChar
+		mov eax,916
+		call Delay
+		call Clrscr
+
 	mov edx,OFFSET v3l4
 	call WriteString
 	mov eax,916
 	call Delay
 	je didRigh
 	call Clrscr
+
+	didRigh:
+		call Clrscr
+		mov al,defa
+		call WriteChar
+		call Clrscr
+		call ReadChar
+		mov inputChar,al
+		cmp inputChar,"d"
+		inc score
+		mov al,righ
+		call WriteChar
+		mov eax,916
+		call Delay
+		call Clrscr
+
 	mov edx,OFFSET v3l5
 	call WriteString
 	mov eax,916
 	call Delay
 	je didLeft
 	call Clrscr
+
 	mov edx,OFFSET v3l6
 	call WriteString
 	mov eax,916
@@ -146,67 +213,35 @@ main PROC
 	je didCha2
 	call Clrscr
 	
-	; controls
-	didLeft:
-		call Clrscr
-		mov al,defa
-		call WriteChar
-		call ReadChar
-		mov inputChar,al
-		cmp inputChar,"a"
-		inc score
-		mov al,left
-		call WriteChar
-	didBack:
-		call Clrscr
-		mov al,defa
-		call WriteChar
-		call ReadChar
-		mov inputChar,al
-		cmp inputChar,"s"
-		inc score
-		mov al,back
-		call WriteChar
-	didOneh:
-		call Clrscr
-		mov al,defa
-		call WriteChar
-		call ReadChar
-		mov inputChar,al
-		cmp inputChar,"w"
-		inc score
-		mov al,oneh
-		call WriteChar
-	didRigh:
-		call Clrscr
-		mov al,defa
-		call WriteChar
-		call ReadChar
-		mov inputChar,al
-		cmp inputChar,"d"
-		inc score
-		mov al,righ
-		call WriteChar
 	didCha1:
 		call Clrscr
 		mov al,defa
 		call WriteChar
+		call Clrscr
 		call ReadChar
 		mov inputChar,al
 		cmp inputChar,"q"
 		inc score
 		mov al,cha1
 		call WriteChar
+		mov eax,916
+		call Delay
+		call Clrscr
+
 	didCha2:
 		call Clrscr
 		mov al,defa
 		call WriteChar
+		call Clrscr
 		call ReadChar
 		mov inputChar,al
 		cmp inputChar,"e"
 		inc score
 		mov al,cha2
 		call WriteChar
+		mov eax,916
+		call Delay
+		call Clrscr
 
 	;score
 		call Clrscr
