@@ -31,7 +31,7 @@ INCLUDE Irvine32.inc
 	v3l3 BYTE "One hop this time (w)",0
 	v3l4 BYTE "Right foot, let's stomp (d)",0
 	v3l5 BYTE "Left foot, let's stomp",0
-	v3l6 BYTE "Cha cha real smooth",0
+	v3l6 BYTE "Cha cha real smooth ({ and })",0
 
 .code
 main PROC
@@ -75,19 +75,19 @@ main PROC
 	call WriteString
 	mov eax,916
 	call Delay
-	je plsClap
+	jmp plsClap
 	call Clrscr
 	mov edx,OFFSET v2l2
 	call WriteString
 	mov eax,916
 	call Delay
-	je plsClap
+	jmp plsClap
 	call Clrscr
 	mov edx,OFFSET v2l3
 	call WriteString
 	mov eax,916
 	call Delay
-	je plsClap
+	jmp plsClap
 	call Clrscr
 	mov edx,OFFSET v2l4
 	call WriteString
@@ -95,7 +95,7 @@ main PROC
 	call Delay
 	call Clrscr
 
-	plsClap:
+	plsClap PROC
 		call Clrscr
 		mov al,defa
 		call WriteChar
@@ -109,6 +109,7 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+	plsClap ENDP
 
 	;verse 3
 	mov edx,OFFSET v3l1
