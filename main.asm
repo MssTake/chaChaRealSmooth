@@ -35,39 +35,49 @@ INCLUDE Irvine32.inc
 
 .code
 main PROC
-	mov eax,black (white * 16)
-	call SetTextColor
 	call Clrscr
 	; mov dl,40
 	; mov dh,12
 	call GotoXY
 
 	; verse 1
+	mov eax,1374
+	call Delay
+
 	mov edx,OFFSET v1l1
 	call WriteString
-	mov eax,916
+	mov eax,1374
 	call Delay
 	call Clrscr
+
 	mov edx,OFFSET v1l2
 	call WriteString
+	mov eax,1374
+	call Delay
 	call Clrscr
+
 	mov edx,OFFSET v1l3
 	call WriteString
-	mov eax,916
+	mov eax,1374
 	call Delay
 	call Clrscr
+
 	mov edx,OFFSET v1l4
 	call WriteString
-	mov eax,916
+	mov eax,1374
 	call Delay
 	call Clrscr
+
 	mov edx,OFFSET v1l5
 	call WriteString
 	mov eax,916
 	call Delay
 	call Clrscr
+
 	mov edx,OFFSET v1l6
 	call WriteString
+	mov eax,1374
+	call Delay
 	call Clrscr
 
 	; verse 2
@@ -75,21 +85,19 @@ main PROC
 	call WriteString
 	mov eax,916
 	call Delay
-	jmp plsClap
-	call Clrscr
+	call plsClap
 
 	mov edx,OFFSET v2l2
 	call WriteString
-	mov eax,916
 	call Delay
-	jmp plsClap
+	call plsClap
 	call Clrscr
 
 	mov edx,OFFSET v2l3
 	call WriteString
 	mov eax,916
 	call Delay
-	jmp plsClap
+	call plsClap
 	call Clrscr
 
 	mov edx,OFFSET v2l4
@@ -98,28 +106,28 @@ main PROC
 	call Delay
 	call Clrscr
 
-	plsClap PROC
+	plsClap:
 		call Clrscr
 		mov al,defa
 		call WriteChar
-		call Clrscr
 		call ReadChar
 		mov inputChar,al
 		cmp inputChar,"c"
+		call Clrscr
 		inc	score
 		mov al,clap
 		call WriteString
 		mov eax,916
 		call Delay
 		call Clrscr
-	plsClap ENDP
+		; ret
 
 	;verse 3
 	mov edx,OFFSET v3l1
 	call WriteString
 	mov eax,916
 	call Delay
-	je didLeft
+	call didLeft
 	call Clrscr
 
 	didLeft:
@@ -136,12 +144,13 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+		; ret
 	
 	mov edx,OFFSET v3l2
 	call WriteString
 	mov eax,916
 	call Delay
-	je didBack
+	call didBack
 	call Clrscr
 
 	didBack:
@@ -158,12 +167,13 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+		; ret
 
 	mov edx,OFFSET v3l3
 	call WriteString
 	mov eax,916
 	call Delay
-	je didOneh
+	call didOneh
 	call Clrscr
 
 	didOneh:
@@ -179,12 +189,13 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+		; ret
 
 	mov edx,OFFSET v3l4
 	call WriteString
 	mov eax,916
 	call Delay
-	je didRigh
+	call didRigh
 	call Clrscr
 
 	didRigh:
@@ -201,19 +212,21 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+		; ret
 
 	mov edx,OFFSET v3l5
 	call WriteString
 	mov eax,916
 	call Delay
+	call didLeft
 	call Clrscr
 
 	mov edx,OFFSET v3l6
 	call WriteString
 	mov eax,916
 	call Delay
-	je didCha1
-	je didCha2
+	call didCha1
+	call didCha2
 	call Clrscr
 	
 	didCha1:
@@ -230,6 +243,7 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+		; ret
 
 	didCha2:
 		call Clrscr
@@ -245,6 +259,7 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+		; ret
 
 	;score
 		call Clrscr
