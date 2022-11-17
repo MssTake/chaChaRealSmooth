@@ -11,3 +11,4 @@
 - controls.asm and .inc
 - lyrics.asm and inc
 - iScrappedVerseFive.txt
+- goodbyeVerseFour.txt
