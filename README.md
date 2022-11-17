@@ -1,5 +1,5 @@
 # chaChaRealSmooth
-- asm rhythm gameCancel changes
+- asm rhythm game
 - this game does not have sound, good luck
 - uses Irvine library
 - it gets stuck in a "left oneh back righ" loop, and I have no idea why
