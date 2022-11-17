@@ -77,18 +77,21 @@ main PROC
 	call Delay
 	jmp plsClap
 	call Clrscr
+
 	mov edx,OFFSET v2l2
 	call WriteString
 	mov eax,916
 	call Delay
 	jmp plsClap
 	call Clrscr
+
 	mov edx,OFFSET v2l3
 	call WriteString
 	mov eax,916
 	call Delay
 	jmp plsClap
 	call Clrscr
+
 	mov edx,OFFSET v2l4
 	call WriteString
 	mov eax,916
@@ -109,6 +112,7 @@ main PROC
 		mov eax,916
 		call Delay
 		call Clrscr
+		ret
 	plsClap ENDP
 
 	;verse 3
