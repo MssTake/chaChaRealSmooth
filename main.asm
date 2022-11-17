@@ -202,7 +202,6 @@ main PROC
 	call WriteString
 	mov eax,916
 	call Delay
-	je didLeft
 	call Clrscr
 
 	mov edx,OFFSET v3l6
@@ -249,7 +248,6 @@ main PROC
 		call WriteString
 		mov eax,916
 		call Delay
-
 
 main ENDP
 END main
