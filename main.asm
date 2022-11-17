@@ -8,8 +8,8 @@ INCLUDE Irvine32.inc
 	defa BYTE "|",0
 	clap BYTE "clap",0
 	left BYTE "/",0
-	back BYTE ".",0
-	oneh BYTE "'",0
+	back BYTE ":",0
+	oneh BYTE "^",0
 	righ BYTE "\",0
 	cha1 BYTE "{",0
 	cha2 BYTE "}",0
